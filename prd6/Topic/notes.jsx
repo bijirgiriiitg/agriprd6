@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import React from "react";
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Notes = () => {
   // Bookmark button
-  const history = useHistory()
+  const navigate = useNavigate()
   const [isActive,setIsActive] = React.useState(false);
   const handleClick = () => {
     //  toggle
@@ -15,7 +15,7 @@ const Notes = () => {
         <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems: 'center'}}>
         <Heading>Food Technology : Agriculture machinery</Heading>
         <form onClick={handleClick}>
-        <Button2 style={{backgroundColor: isActive ? '#0B6E4F' : '', color: isActive ? '#FFFFFF' : ''}} onClick={() => history('/bookmarks')}><BookmarkBorderIcon></BookmarkBorderIcon></Button2>
+        <Button2 style={{backgroundColor: isActive ? '#0B6E4F' : '', color: isActive ? '#FFFFFF' : ''}} onClick={() => navigate('/bookmarks')}><BookmarkBorderIcon></BookmarkBorderIcon></Button2>
         </form>
         </div>
         <Text>
@@ -34,8 +34,8 @@ const Notes = () => {
         Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes fr humour and the like).
         </Text>
         <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems: 'center'}}>
-        <Button1 onClick={() => history('/notes/1')}>Mark as complete</Button1>
-        <Button2 onClick={() => history('/topics')}>Join the discussion</Button2>
+        <Button1 onClick={() => navigate('/notes/1')}>Mark as complete</Button1>
+        <Button2 onClick={() => navigate('/topics')}>Join the discussion</Button2>
         </div>
         
     </div>

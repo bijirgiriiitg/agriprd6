@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { Tabs, Tab, TabPanel } from "../../components/prd6/tabs/tabss";
 //import { Card } from "react-bootstrap";
@@ -21,7 +21,7 @@ const TabPanelContainer = styled.div`
 `;
 
 export default function Appk() {
-  const navigate = useNavigate()
+  const history = useHistory()
   const [activeTab, setActiveTab] = useState(2);
 
   const handleChange = (e, value) => {
@@ -46,7 +46,7 @@ export default function Appk() {
         <TabPanel value={activeTab} selectedIndex={2}>
           <h1 className="tab31">Food Technology : Agriculture machinery</h1>
           <div className="bt01">
-            <Button onClick={() => navigate('/bookmarks')} className="bt0"><MdBookmarkBorder className="oye100" />Bookmark</Button>
+            <Button onClick={() => history('/bookmarks')} className="bt0"><MdBookmarkBorder className="oye100" />Bookmark</Button>
           </div>
           <img className="org" src="./images/111.jpg" alt="/"/>
           <p className="tab4">What will you learn ?</p>
@@ -59,8 +59,8 @@ export default function Appk() {
           <p className="tab9"><MdLens className="tab7" />WLorem ipsum dolor sit amet, consectetur ad ipiscing elit.</p>
           <p className="tab10"><MdLens className="tab7" />WLorem ipsum dolor sit amet, consectetur ad ipiscing elit.</p>
           <div className="bt3">
-            <Button onClick={() => navigate('/lectures/1')}className="bt4">Mark as Complete</Button>
-            <Button onClick={() => navigate('/topics')} className="bt5">Join the Discussion</Button>
+            <Button onClick={() => history('/lectures/1')}className="bt4">Mark as Complete</Button>
+            <Button onClick={() => history('/topics')} className="bt5">Join the Discussion</Button>
          </div>
           
         </TabPanel>

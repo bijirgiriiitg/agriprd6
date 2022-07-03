@@ -4,7 +4,7 @@ import { Tabs, Tab, TabPanel } from "../../components/prd6/tabs/tabss";
 import { Button } from "react-bootstrap";
 import { MdBookmarkBorder} from "react-icons/md";
 import logo from "./unlock.jpg"
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Chevron from "react-chevron";
 import Sarthak from "../../components/prd6/Topic/NavBar";
 const TabsContainer = styled.div`
@@ -18,7 +18,7 @@ const TabPanelContainer = styled.div`
 `;
 
 export default function Apkk() {
-  const navigate = useNavigate()
+  const history = useHistory()
   const [activeTab, setActiveTab] = useState(2);
 
   const handleChange = (e, value) => {
@@ -46,7 +46,7 @@ export default function Apkk() {
         <TabPanel value={activeTab} selectedIndex={2}>
           <h1 className="tab31">Food Technology : Agriculture machinery</h1>
           <div className="bt01">
-            <Button onClick={() => navigate('/bookmarks')} className="bt0"><MdBookmarkBorder className="oye100" />Bookmark</Button>
+            <Button onClick={() => history('/bookmarks')} className="bt0"><MdBookmarkBorder className="oye100" />Bookmark</Button>
           </div>
           <img className="org1" src={logo} alt="/"/>
           <div className="bt140">
